@@ -9,6 +9,11 @@
   "author": "Louys Dev",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
-  }
+    "dart-sass": "^1.25.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^7.0.3",
+    "sass": "^1.55.0"
+  },
+  "dependencies": {}
 }
