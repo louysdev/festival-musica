@@ -1,5 +1,3 @@
-$rojo : "black";
-
-body {
-    background-color: $rojo;
-}
+@import "./base/normalize";
+@import "./base/variables";
+@import "./base/globales";
