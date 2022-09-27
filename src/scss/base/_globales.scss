@@ -6,7 +6,7 @@ html {
     box-sizing: inherit;
 }
 body {
-    font: $fuentePrincipal;
+    font-family: $fuentePrincipal;
     font-size: 1.6rem;
 }
 p {
@@ -26,6 +26,7 @@ img {
 }
 h1 {
     font-size: 4rem;
+    font-weight: $bold
 }
 h2 {
     font-size: 3.6rem;
