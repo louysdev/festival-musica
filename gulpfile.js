@@ -12,7 +12,7 @@ function css(done) {
 function minificarcss() {
     return src("./src/scss/app.scss")
     .pipe(sass({
-        outputStyle: "compressed"
+        outputStyle: "expanded"
     }))
     .pipe(dest("./build/css"))
 }
