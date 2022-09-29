@@ -1,0 +1,19 @@
+.video {
+    position: relative; // Base o contenedor de absolute
+    max-height: 70rem; 
+    overflow: hidden;
+    .overlay {
+        position: absolute; // Tomara como contenedor a relative y se va a posicion siempre dentro de relative. Funciona como coodenadas
+        // top: 0;
+        // right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    video {
+        display: block; // Para quitar la linea de abajo, todos los videos tiene un display un line
+        width: 100%;
+    }
+}
+
