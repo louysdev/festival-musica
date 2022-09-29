@@ -1,28 +1,40 @@
+// Codigo del diseño del header
+
 .header {
     background-color: $verde;
 
-    .contenido-header {
-        padding: $separacion / 2 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .contenido-header { // Anidacion porque es hijo del header
+        padding: $separacion / 2 0; // No se necesita hacer uso de calc porque SASS funciona como JS
+        
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
-    h1 {
+    h1 { 
         color: $blanco;
+        margin-bottom: 1rem;
+        text-align: center; // Cuando tiene display flex eso no sirve
+        
+        @include desktop {
+            margin-bottom: 0;
+        }
     }
 }
 
-.navegacion-principal {
+.navegacion-principal { // Aun que es hijo del header no esta anidado porque ya se hace muy grande el codigo css
 
     display: flex;
     gap: 2rem;
-
+    justify-content: center;
+    
     a {
         color: $blanco;
         font-size: 2rem;
-
-        &:hover {
+        
+        &:hover { // Con & hace referencia al elemento que padre osea el enlace
             color: $amarillo;
         }
     }

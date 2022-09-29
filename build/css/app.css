@@ -338,6 +338,9 @@ template {
   display: none;
 }
 
+/* 
+    Los mixins son como funciones 
+*/
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -393,17 +396,29 @@ h3 {
 }
 .header .contenido-header {
   padding: 2.5rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+@media (min-width: 768px) {
+  .header .contenido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .header h1 {
   color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .header h1 {
+    margin-bottom: 0;
+  }
 }
 
 .navegacion-principal {
   display: flex;
   gap: 2rem;
+  justify-content: center;
 }
 .navegacion-principal a {
   color: #ffffff;
