@@ -451,3 +451,26 @@ h3 {
   display: block;
   width: 100%;
 }
+
+.contenido-video {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  /* Para posicionar defrente o detras 1 es enfrente -1 detras, como si fuera word */
+}
+.contenido-video h2 {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  /* Hace que un salto de linea en un texto por */
+  align-items: flex-start;
+  /* Hace que el ancho del span no depende del h2*/
+  font-size: 7rem;
+}
+.contenido-video h2 span {
+  background-color: #f53756;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
