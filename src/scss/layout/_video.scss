@@ -33,12 +33,20 @@
         display: flex;
         flex-direction: column; /* Hace que un salto de linea en un texto por */
         align-items: flex-start; /* Hace que el ancho del span no depende del h2*/
-        font-size: 7rem;
+        font-size: 5rem;
+
+        @include tablet {
+            font-size: 7rem;
+        }
 
         span {
             background-color: $rosa;
-            font-size: 2rem;
+            font-size: 1.5rem;
             padding: 1rem 2rem;
+
+            @include tablet {
+                font-size: 2rem;
+            }
         }
     }
 }

@@ -475,12 +475,22 @@ h3 {
   /* Hace que un salto de linea en un texto por */
   align-items: flex-start;
   /* Hace que el ancho del span no depende del h2*/
-  font-size: 7rem;
+  font-size: 5rem;
+}
+@media (min-width: 768px) {
+  .contenido-video h2 {
+    font-size: 7rem;
+  }
 }
 .contenido-video h2 span {
   background-color: #f53756;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 1rem 2rem;
+}
+@media (min-width: 768px) {
+  .contenido-video h2 span {
+    font-size: 2rem;
+  }
 }
 
 .sobre-festival {
@@ -558,4 +568,26 @@ h3 {
 
 .rock .nombre-escenario:after {
   background-image: url(../img/icono_rock.png);
+}
+
+.calendario {
+  padding: 0;
+  list-style: none;
+}
+.calendario li {
+  padding: 2.5rem;
+  font-weight: 700;
+}
+.calendario li span {
+  font-weight: 400;
+}
+
+/* ntn-child es los hijos de los elementos, y odd es uqe le va aplicar el cambio a los hijos en orden numero cuando sean impares */
+.bg-verde .calendario li:nth-child(odd) {
+  background-color: #3b9691;
+  /* darken es para agregar oscurudidad a un color ya definido */
+}
+
+.bg-amarillo .calendario li:nth-child(odd) {
+  background-color: #fef03a;
 }
