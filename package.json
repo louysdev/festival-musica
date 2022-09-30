@@ -12,6 +12,7 @@
     "dart-sass": "^1.25.0",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^4.0.0",
     "gulp-sass": "^5.1.0",
     "node-sass": "^7.0.3",
     "sass": "^1.55.0"
