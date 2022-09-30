@@ -1,0 +1,53 @@
+.lineup {
+    background-color: $rosa;
+    padding: $separacion 0;
+
+    h3, p {
+        text-align: center;
+        color: $blanco;
+    }
+    .dia {
+        text-transform: uppercase;
+        margin: $separacion 0;
+    }
+}
+
+.escenario-contenedor {
+    @include tablet {
+        @include grid(2, $separacion)
+    }
+
+    .escenario {
+        padding-top: $separacion / 2;
+    }
+
+    .nombre-escenario {
+        color: $negro;
+        font-size: 2rem;
+        font-weight: $delgada;
+
+         /* Crea un pseudo elemento luego del nombre del escenario, para que se anide pegado se le pone el &*/
+        &:after {
+            content: ""; /* Sin esto no se ve */
+            display: block; /* x2 */
+            width: 20rem;
+            height: 10rem;
+            margin: 2rem auto 0 auto; /* Centrar */
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+}
+
+.edm .nombre-escenario {
+    &:after {
+        background-image: url(../img/icono_edm.png);
+    }
+}
+
+.rock .nombre-escenario {
+    &:after {
+        background-image: url(../img/icono_rock.png);
+    }
+}

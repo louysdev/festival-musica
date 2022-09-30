@@ -8,7 +8,7 @@ sass.compiler = require("dart-sass")
 
 const paths = {
     imagenes: "./src/img/**/*",
-    scss: "./src/scss/app.scss"
+    scss: "./src/scss/**/*"
 }
 
 function css(done) {
