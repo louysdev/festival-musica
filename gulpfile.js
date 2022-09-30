@@ -2,17 +2,23 @@ const { series, src, dest, watch } = require("gulp")
 const sass = require('gulp-sass')(require('sass'))
 const imagemin = require("gulp-imagemin") // Solo es posible usalo en la version 7.1.0, por el require
 const notify = require("gulp-notify")
+const webp = require("gulp-webp")
 
 sass.compiler = require("dart-sass")
 
+const paths = {
+    imagenes: "./src/img/**/*",
+    scss: "./src/scss/app.scss"
+}
+
 function css(done) {
-    return src("./src/scss/app.scss")
+    return src(paths.scss)
         .pipe(sass())
         .pipe(dest("./build/css"))
 }
 
 function minificarcss() {
-    return src("./src/scss/app.scss")
+    return src(paths.scss)
     .pipe(sass({
         outputStyle: "expanded"
     }))
@@ -20,14 +26,21 @@ function minificarcss() {
 }
 
 function imagenes() {
-    return src("./src/img/**/*") // Le todas las carpetas y todos los contenidos
+    return src(paths.imagenes) // Le todas las carpetas y todos los contenidos
     .pipe(imagemin()) 
     .pipe(dest("./build/img"))
     .pipe(notify({message: "Imagen minificada"}))
 }
 
+function versionWebp() {
+    return src(paths.imagenes)
+    .pipe(webp())
+    .pipe(dest("./build/img"))
+    .pipe(notify({message: "Version webp lista"}))
+}
+
 function whatchArchivos() {
-    watch("src/scss/**/*.scss", css)
+    watch(paths.scss, css)
 }
 
 exports.css = css
@@ -35,4 +48,4 @@ exports.minificarcss = minificarcss
 exports.imagenes = imagenes
 exports.whatchArchivos = whatchArchivos
 
-exports.default = series(css, imagenes, whatchArchivos)
+exports.default = series(css, imagenes, versionWebp, whatchArchivos)
