@@ -3,12 +3,14 @@ const sass = require('gulp-sass')(require('sass'))
 const imagemin = require("gulp-imagemin") // Solo es posible usalo en la version 7.1.0, por el require
 const notify = require("gulp-notify")
 const webp = require("gulp-webp")
+const concat = require("gulp-concat")
 
 sass.compiler = require("dart-sass")
 
 const paths = {
     imagenes: "./src/img/**/*",
-    scss: "./src/scss/**/*"
+    scss: "./src/scss/**/*",
+    js: "./src/js/**/*.js"
 }
 
 function css(done) {
@@ -32,6 +34,12 @@ function imagenes() {
     .pipe(notify({message: "Imagen minificada"}))
 }
 
+function javascript() {
+    return src(paths.js)
+    .pipe(concat("bundle.js"))
+    .pipe(dest("./build/js"))
+}
+
 function versionWebp() {
     return src(paths.imagenes)
     .pipe(webp())
@@ -41,6 +49,7 @@ function versionWebp() {
 
 function whatchArchivos() {
     watch(paths.scss, css)
+    watch(paths.js, javascript)
 }
 
 exports.css = css
@@ -48,4 +57,4 @@ exports.minificarcss = minificarcss
 exports.imagenes = imagenes
 exports.whatchArchivos = whatchArchivos
 
-exports.default = series(css, imagenes, versionWebp, whatchArchivos)
+exports.default = series(css, javascript, imagenes, versionWebp, whatchArchivos)
