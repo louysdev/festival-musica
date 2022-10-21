@@ -3,6 +3,14 @@
 .header {
     background-color: $verde;
 
+    @include tablet {
+        &.fijo {
+            position: fixed;
+            width: 100%;
+            box-shadow: 0 1rem 2rem #333;
+        }
+    }
+
     .contenido-header { // Anidacion porque es hijo del header
         padding: $separacion / 2 0; // No se necesita hacer uso de calc porque SASS funciona como JS
         
