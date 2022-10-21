@@ -357,6 +357,9 @@ body {
 body.fijar-body {
   overflow: hidden;
 }
+body.body-scroll {
+  padding-top: 106px;
+}
 
 p {
   font-size: 2rem;
@@ -407,9 +410,11 @@ h3 {
 }
 @media (min-width: 768px) {
   .header.fijo {
+    top: 0;
+    left: 0;
     position: fixed;
     width: 100%;
-    box-shadow: 0 1rem 2rem #333;
+    box-shadow: 0 0.1rem 2rem #333;
   }
 }
 .header .contenido-header {

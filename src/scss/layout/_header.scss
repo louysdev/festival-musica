@@ -5,9 +5,11 @@
 
     @include tablet {
         &.fijo {
+            top: 0;
+            left: 0;
             position: fixed;
             width: 100%;
-            box-shadow: 0 1rem 2rem #333;
+            box-shadow: 0 .1rem 2rem #333;
         }
     }
 

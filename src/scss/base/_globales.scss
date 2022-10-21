@@ -12,6 +12,10 @@ body {
     &.fijar-body {
         overflow: hidden;
     }
+
+    &.body-scroll {
+        padding-top: 106px;
+    }
 }
 p {
     font-size: 2rem;
