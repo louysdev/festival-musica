@@ -7,7 +7,7 @@
     }
 
     .contenedor-boletos {
-
+        
         @include tablet {
             @include grid(2, $separacion);
         }
@@ -39,6 +39,7 @@
             font-size: 1.6rem;
         }
     }
+
     &-body {
         background-color: $blanco;
 
@@ -54,6 +55,7 @@
             }
         }
     }
+
     &-footer {
         background-color: $morado;
         p {
